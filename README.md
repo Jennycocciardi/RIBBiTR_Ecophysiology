@@ -17,7 +17,7 @@ This repository will house important information for collecting, storing, and an
 ### Concatenating HOBO data
 
 
-## THERMAL IMAGES FROM FIELD
+## THERMAL IMAGES
 
 
 ### Setting up thermal cameras
