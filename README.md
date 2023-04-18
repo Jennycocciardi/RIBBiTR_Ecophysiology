@@ -22,7 +22,7 @@ be downloaded via the HOBOconnect App.
 :file_folder: **Storage**: Please store all HOBO data as .hobo files. All HOBO data will be stored in the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google drive folder. To standardize storage, please create a new folder within your study system (i.e., Brazil, Panama, etc.) directory with the following naming convention... *'HOBOS_DateDeployed_DateStopped'*. The date should be in the 'Month,Year' format (for example, Nov22), and all files for the sampling time period/season can be housed within this newly-created directory.
 
 :label: **File naming system**: Individal .hobo files should be named with the site number, deployment location, deployement depth or height, and 
-start and end date of readings, as follows: *'SiteID_DeployementLocation_depthORheight'*. For example: *'PA01_water_temp_15cm'*
+start and end date of readings, as follows: *'SiteID_DeployementLocation_depthORheight'*. For example: *'PA01_shade_15cm'*
 
 ### Trimming HOBO data :scissors:
 
