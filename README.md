@@ -19,10 +19,10 @@ be downloaded via the HOBOconnect App.
 
 ### Storing HOBO data :file_folder:
 
-:file_folder: **Storage**: Please store all HOBO data as .hobo files. All HOBO data will be stored in the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google drive folder. To standardize storage, please create a new folder within your study system (i.e., Brazil, Panama, etc.) directory with the following naming convention... *'HOBOS_DateDeployed_DateStopped'*. The date should be in the 'Month,Year' format (for example, Nov22), and all files for the sampling time period/season can be housed within this newly-created directory.
+:file_folder: **Storage**: Please store all HOBO data as .hobo files. All HOBO data will be stored in the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google drive folder. To standardize storage, please create a new folder within your study system (i.e., Brazil, Panama, etc.) directory with the following naming convention... *'HOBOS_DateDeployed_DateStopped'*. The date should be in the 'Month,Year' format (for example, Nov22), and all files for that sampling time-period/season can be housed within this newly-created directory.
 
 :label: **File naming system**: Individal .hobo files should be named with the site number, deployment location, deployement depth or height, and 
-start and end date of readings, as follows: *'SiteID_DeployementLocation_depthORheight'*. For example: *'PA01_shade_15cm'*
+start and end date of readings, as follows: *'SiteID_DeployementLocation_depthORheight'*. For example: *'PA01_shade_15cm.hobo'*
 
 ### Trimming HOBO data :scissors:
 
@@ -51,7 +51,7 @@ More information on setting up thermal cameras can be found in the 'RIBBiTR: Cor
 
 ### Storing thermal images 	:file_folder:
 
-:file_folder: **Storage**: All thermal images/FLIR photos will be stored in the ['Thermal Images_FLIr photos'](https://drive.google.com/drive/folders/1_8dMZ86P7BmLn0GG9zTTS8RomSaohe_2?usp=sharing) google drive folder. To standardize
+:file_folder: **Storage**: All thermal images/FLIR photos will be stored in the ['Thermal Images_FLIR photos'](https://drive.google.com/drive/folders/1_8dMZ86P7BmLn0GG9zTTS8RomSaohe_2?usp=sharing) google drive folder. To standardize
 storage, please create a new folder within your study system (i.e., Brazil, Panama, etc.) directory with the following
 naming convention... *'DATE_Site'*. The date should be the date the photos were taken in 'YR,MO,DAY' format (for example, 220725),
 and the site should be the site name. 
