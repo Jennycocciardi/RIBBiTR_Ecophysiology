@@ -41,7 +41,8 @@ for (file_name in file_list) {
   data$location <- location
   data$height <- height
   # Adding in a column for file name to conserve in case we need to reference original files
-  data$file_name <- file_name
+  # This needs to be different from file_name, which is a used as apart of a function for file_list
+  data$file <- file_name
   
   # Save the modified data to a new Excel file with a modified file name, and in a new directory
   write_xlsx(data, paste0(out_dir, "new_", file_name))
@@ -61,7 +62,7 @@ dfs <- lapply(file_list, read_excel)
 
 # Combine the data frames into one data frame, adding the grouping variable
 combined_df <- bind_rows(dfs, .id = "file_name") %>%
-  select(site, location, height, everything())
+  select(site, location, height, file, everything())
 
 # Split the combined data frame into separate data frames based on the grouping variable
 split_dfs <- split(combined_df, f = combined_df$location)
