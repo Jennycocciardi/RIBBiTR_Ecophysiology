@@ -9,10 +9,8 @@ HOBO data loggers will be deployed within all study systems to collect detailed 
 temperatures downscaled from global temperature databases. HOBO data loggers will record microclimate at 3-5 key sites within each study system,
 focusing on primary survey sites. 
 
-**Please refer to the 'RIBBiTR: Core Protocols' document for setting up and deploying HOBO loggers.**
-
-**_All HOBO logger metadata should be recorded in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet
-found within the Ecophysiology team's [google drive folder](https://drive.google.com/drive/folders/1h-6NhqvPjo4gdV8QPZE9PyNGXG32uw4q?usp=share_link)._**
+Please refer to the 'RIBBiTR: Core Protocols' document for setting up and deploying HOBO loggers. **All HOBO logger metadata should be recorded in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet
+found within the Ecophysiology team's [google drive folder](https://drive.google.com/drive/folders/1h-6NhqvPjo4gdV8QPZE9PyNGXG32uw4q?usp=share_link).**
 
 ### Downloading HOBO data
 
@@ -22,18 +20,16 @@ be downloaded via the HOBOconnect App.
 
 ### Storing HOBO data :file_folder:
 
-:file_folder: **Storage**: Please store all HOBO data as .hobo files. All HOBO data will be stored in the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google drive folder. To standardize storage, please create a new folder within the directory for your study system (i.e., Brazil, Panama, etc.) with the following naming convention... *'HOBOS_MonthYrDeployed_MonthYrStopped'*. The date should be in the 'Month,Year' format (for example, Nov22), and all files for that sampling time-period/season can be housed within this newly-created directory.
+:file_folder: **Storage**: Please store all HOBO data as .hobo files. All HOBO data will be stored in the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google drive folder. To standardize storage, please create a new folder within the directory for your study system (i.e., Brazil, Panama, etc.) with the following naming convention... ```'HOBOS_MonthYrDeployed_MonthYrStopped'```. The date should be in the 'Month,Year' format (for example, Nov22), and all files for that sampling time-period/season can be housed within this newly-created directory.
 
 :label: **File naming system**: Individal .hobo files should be named with the site number, deployment location, and deployement depth or height as follows: 
-> **_'SiteID_DeployementLocation_depthORheight'_**.
-
-For example: *'PA01_shade_15cm.hobo'* This name should also match the '*Hobo logger name*' colomn in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet. 
+```SiteID_DeployementLocation_depthORheight``` for example, *'PA01_shade_15cm.hobo'*. **This name should also match the '*Hobo logger name*' colomn in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet.** 
 
 ### Trimming HOBO data :scissors:
 
 It is very important to make sure that all files are standardized to the same timezone before trimming. This can be automated at some point, but 
-I'm still figuring out how to automate this across all files within one folder where date-time column name differs. Also prior to trimming files, 
-the date-time column in files should be standardized. This can be easily down using the ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script, which includes code for standardizing the column name and
+I'm still figuring out how to loop this across all files within one folder where date-time column name differs. Also prior to trimming files, 
+the date-time column in files should be standardized. This can be easily done using the ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script, which includes code for standardizing the column name and
 timezone across files, and code for trimming data.
 
 The ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script requires an additional metadata file
