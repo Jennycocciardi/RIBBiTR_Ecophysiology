@@ -69,3 +69,5 @@ split_dfs <- split(combined_df, f = combined_df$location)
 
 # Write each data frame to a separate file based on the grouping variable
 walk(split_dfs, ~ write_csv(.x, paste0(.x$location[1], ".csv")))
+
+
