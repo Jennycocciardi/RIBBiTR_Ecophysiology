@@ -47,7 +47,7 @@ The file_name column will be the reference ID, so make sure this column matches 
 ### Concatenating HOBO data
 
 We will combine data across sites from the same deployement locations (e.g., sun, shade) for analysis purposes. Before starting, make sure that 
-individual .hobo files are named as specified above (*'SiteID_DeployementLocation_depthORheight'*). The ['*CombineHOBOfiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/CombineHOBOFiles.R) script can then be used to create one .csv file per deployemnet location for each study system. 
+individual .hobo files are named *'SiteID_DeployementLocation_depthORheight'*. The ['*CombineHOBOfiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/CombineHOBOFiles.R) script can then be used to create one .csv file per deployemnet location for each study system. 
 
 ___
 ## THERMAL IMAGES
