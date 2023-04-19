@@ -33,10 +33,10 @@ For example: *'PA01_shade_15cm.hobo'* This name should also match the '*Hobo log
 
 It is very important to make sure that all files are standardized to the same timezone before trimming. This can be automated at some point, but 
 I'm still figuring out how to automate this across all files within one folder where date-time column name differs. Also prior to trimming files, 
-the date-time column in files should be standardized. This can be easily down using the ['*TrimHOBOfiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script, which includes code for standardizing the column name and
+the date-time column in files should be standardized. This can be easily down using the ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script, which includes code for standardizing the column name and
 timezone across files, and code for trimming data.
 
-The ['*TrimHOBOfiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script requires an additional metadata file
+The ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script requires an additional metadata file
 that contains logger start and stop times to automate trimming. This files should be named '*trimming_info.csv*' and should be placed within the same
 directory as data files. It should be in the format:
 ```
