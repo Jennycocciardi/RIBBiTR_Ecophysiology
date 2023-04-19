@@ -1,6 +1,7 @@
 # Combine RIBBiTR HOBO files into one file, organized by deployment location and for each 
 # study system, also add in a column for height or depth of each logger.
 # Author: Jenny Cocciardi
+# email: jmcoccia@olemiss.edu
 # Date: 2023-April-18
 
 # Load required packages
