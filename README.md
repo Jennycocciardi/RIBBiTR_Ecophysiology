@@ -22,11 +22,12 @@ be downloaded via the HOBOconnect App.
 
 ### Storing HOBO data :file_folder:
 
-:file_folder: **Storage**: Please store all HOBO data as .hobo files. All HOBO data will be stored in the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google drive folder. To standardize storage, please create a new folder within your study system (i.e., Brazil, Panama, etc.) directory with the following naming convention... *'HOBOS_DateDeployed_DateStopped'*. The date should be in the 'Month,Year' format (for example, Nov22), and all files for that sampling time-period/season can be housed within this newly-created directory.
+:file_folder: **Storage**: Please store all HOBO data as .hobo files. All HOBO data will be stored in the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google drive folder. To standardize storage, please create a new folder within the directory for your study system (i.e., Brazil, Panama, etc.) with the following naming convention... *'HOBOS_MonthYrDeployed_MonthYrStopped'*. The date should be in the 'Month,Year' format (for example, Nov22), and all files for that sampling time-period/season can be housed within this newly-created directory.
 
-:label: **File naming system**: Individal .hobo files should be named with the site number, deployment location, deployement depth or height, and 
-start and end date of readings, as follows: *'SiteID_DeployementLocation_depthORheight'*. For example: *'PA01_shade_15cm.hobo'* This name should also
-match the '*Hobo logger name*' colomn in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet. 
+:label: **File naming system**: Individal .hobo files should be named with the site number, deployment location, and deployement depth or height as follows: 
+> **_'SiteID_DeployementLocation_depthORheight'_**.
+
+For example: *'PA01_shade_15cm.hobo'* This name should also match the '*Hobo logger name*' colomn in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet. 
 
 ### Trimming HOBO data :scissors:
 
@@ -34,6 +35,9 @@ match the '*Hobo logger name*' colomn in the ['HOBO logger deployment data'](htt
 
 ### Concatenating HOBO data
 
+We will combine data across sites from the same deployement locations (e.g., sun, shade) for analysis purposes. Before starting, make sure that 
+individual .hobo files are named as specified above (*'SiteID_DeployementLocation_depthORheight'*). The ['*CombineHOBOfiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/CombineHOBOFiles.R) script can then 
+be used to create one .csv file per deployemnet location for each study system. 
 
 ___
 ## THERMAL IMAGES
