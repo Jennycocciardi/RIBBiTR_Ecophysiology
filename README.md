@@ -26,10 +26,11 @@ be downloaded via the HOBOconnect App.
 ```SiteID_DeployementLocation_depthORheight``` for example, *'PA01_shade_15cm.hobo'*. **This name should also match the '*Hobo logger name*' colomn in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet.** 
 
 Deployment location and height/depth categories are: 
-  ```sun_0cm        shade_0cm              water_5cm
+  ```
+     sun_0cm        shade_0cm         soil_-5cm       water_5cm
      sun_25cm       shade_25cm        soil_-10cm      water_20cm
      sun_50cm       shade_50cm                        water_35cm                 
-   ```  
+  ```  
 
 ### Trimming HOBO data :scissors:
 
