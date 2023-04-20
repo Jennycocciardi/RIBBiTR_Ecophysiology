@@ -10,7 +10,7 @@ temperatures downscaled from global temperature databases. HOBO data loggers wil
 focusing on primary survey sites. 
 
 Please refer to the 'RIBBiTR: Core Protocols' document for setting up and deploying HOBO loggers. **All HOBO logger metadata should be recorded in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet
-found within the Ecophysiology team's [google drive folder](https://drive.google.com/drive/folders/1h-6NhqvPjo4gdV8QPZE9PyNGXG32uw4q?usp=share_link).**
+found within the Ecophysiology team's google drive folder.**
 
 ### Downloading HOBO data
 
