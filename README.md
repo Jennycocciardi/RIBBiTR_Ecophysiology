@@ -25,6 +25,14 @@ be downloaded via the HOBOconnect App.
 :label: **File naming system**: Individal .hobo files should be named with the site number, deployment location, and deployement depth or height as follows: 
 ```SiteID_DeployementLocation_depthORheight``` for example, *'PA01_shade_15cm.hobo'*. **This name should also match the '*Hobo logger name*' colomn in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet.** 
 
+Deployment location and height/depth categories are: 
+  ```soil_0cm OR ground
+     soil_-5cm OR underground?
+     water_
+     fullsun_0cm
+     fullsun_50cm
+   ```  
+
 ### Trimming HOBO data :scissors:
 
 It is very important to make sure that all files are standardized to the same timezone before trimming. This can be automated at some point, but 
