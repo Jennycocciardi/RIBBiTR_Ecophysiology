@@ -40,8 +40,8 @@ the date-time column in files should be standardized. This can be easily done us
 timezone across files, and code for trimming data.
 
 The ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script requires an additional metadata file
-that contains logger start and stop times to automate trimming. This files should be named '*trimming_info.csv*' and should be placed within the same
-directory as data files. It should be in the format:
+that contains logger start and stop times to automate trimming. This file should be named '*trimming_info.csv*' and should be placed within the same
+directory as the data files (there should be one for each study system per sampling period). It should be in the format:
 ```
 file_name, start_date.time, stop_date.time
 ```
