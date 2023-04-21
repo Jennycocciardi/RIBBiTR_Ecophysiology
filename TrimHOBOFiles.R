@@ -15,7 +15,7 @@ directory <- "/path/to/folder/containing/hobo/data"
 
 # Loop over files in the directory
 for (filename in list.files(directory, pattern = "\\.xlsx$")) {
-  # Read the xlsx file
+  # Read the .csv file (if files are exported as .xlsx, parts of this code will have to be modified to reflect that.
   data <- read_excel(file.path(directory, filename))
   
   # Rename the column
