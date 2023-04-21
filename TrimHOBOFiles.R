@@ -11,7 +11,7 @@ library(readxl)
 library(openxlsx)
 
 # Set the directory path
-directory <- "/Users/jennycocciardi/Desktop/HOBOs_Aug22-Oct22"
+directory <- "/path/to/folder/containing/hobo/data"
 
 # Loop over files in the directory
 for (filename in list.files(directory, pattern = "\\.xlsx$")) {
