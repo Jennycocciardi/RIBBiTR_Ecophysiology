@@ -41,18 +41,15 @@ Deployment location and height/depth categories are:
 
 ### Trimming HOBO data :scissors:
 
-It is very important to make sure that all files are standardized to the same timezone before trimming. This can be automated at some point, but 
-I'm still figuring out how to loop this across all files within one folder where date-time column name differs. Also prior to trimming files, 
-the date-time column in files should be standardized. This can be easily done using the ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script, which includes code for standardizing the column name and
-timezone across files, and code for trimming data.
+Before trimming data, ensure that all files are using the same timezone. Also prior to trimming files, the date-time column in files should be standardized. This can be easily done using the ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script, which includes code for standardizing colomn names, as well as the code for trimming data.
 
 The ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script requires an additional metadata file
 that contains logger start and stop times to automate trimming. This file should be named '*trimming_info.csv*' and should be placed within the same
 directory as the data files (there should be one for each study system per sampling period). It should be in the format:
 ```
-file_name, start_date.time, stop_date.time
+hobo_name, start_date.time, stop_date.time
 ```
-The file_name column will be the reference ID, so make sure this column matches the data file names precisely.
+The hobo_name column will be the reference ID, so make sure this column matches the file names precisely.
 
 ### Concatenating HOBO data
 
