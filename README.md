@@ -9,14 +9,18 @@ HOBO data loggers will be deployed within all study systems to collect detailed 
 temperatures downscaled from global temperature databases. HOBO data loggers will record microclimate at 3-5 key sites within each study system,
 focusing on primary survey sites. 
 
-Please refer to the 'RIBBiTR: Core Protocols' document for setting up and deploying HOBO loggers. **All HOBO logger metadata should be recorded in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet
-found within the Ecophysiology team's google drive folder.**
+Please refer to the 'RIBBiTR: Core Protocols' document for setting up and deploying HOBO loggers. ***All HOBO logger metadata should be recorded in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet
+found within the Ecophysiology team's google drive folder.***
 
-### Downloading HOBO data
+### Setting up HOBO loggers and downloading HOBO data
 
-To download data from loggers, you can use the waterproof data shuttle (U-DTW-1 shuttle – NOTE: requires HOBOware Pro software) which can store 
-data until you reach a computer, or the USB shuttle (BASE-U-4) directly connected to a computer. Bluetooth data loggers are launched and data can 
-be downloaded via the HOBOconnect App.
+Hobo loggers can be set-up using HoboWare or using the waterproof data shuttle (U-DTW-1 shuttle – NOTE: requires HOBOware Pro software). 
+***Very important:*** Please ensure that when setting up the loggers that your computer's clock and timezone are accurate - HoboWare uses this to
+set the clock on the loggers, *AND* that all loggers are setup using the same timezone, *AND* the timezone matches the timezone where you are deploying 
+the loffers.
+
+Data can be downloaded also using the waterproof data shuttle which can store data until you reach a computer, or the USB shuttle (BASE-U-4) directly 
+connected to a computer. Bluetooth data loggers are launched and data can be downloaded via the HOBOconnect App.
 
 ### Storing HOBO data :file_folder:
 
