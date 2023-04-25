@@ -15,18 +15,21 @@ found within the Ecophysiology team's google drive folder.***
 ### Setting up HOBO loggers and downloading HOBO data
 
 Hobo loggers can be set-up using HoboWare or using the waterproof data shuttle (U-DTW-1 shuttle – NOTE: requires HOBOware Pro software). 
-***IMPORTANT:*** Please ensure that when setting up the loggers that your computer's clock and timezone are accurate - HoboWare uses this to
+:bangbang:***IMPORTANT:*** Please ensure that when setting up the loggers that your computer's clock and timezone are accurate - HoboWare uses this to
 set the clock on the loggers *AND* that all loggers are setup using the same timezone *AND* the timezone matches the timezone where you are deploying the loffers.
 
 Data can be downloaded also using the waterproof data shuttle which can store data until you reach a computer, or the USB shuttle (BASE-U-4) directly 
 connected to a computer. Bluetooth data loggers are launched and data can be downloaded via the HOBOconnect App.
+
+:bangbang:***IMPORTANT***: Date and time of deployment and date and time the logger was removed from the field should be recorded in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet
+found within the Ecophysiology team's google drive folder.
 
 ### Storing HOBO data :file_folder:
 
 :file_folder: **Storage**: Please store all HOBO data as .hobo files. All HOBO data will be stored in the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google drive folder. To standardize storage, please create a new folder within the directory for your study system (i.e., Brazil, Panama, etc.) with the following naming convention... ```'HOBOS_MonthYrDeployed_MonthYrStopped'```. The date should be in the 'Month,Year' format (for example, Nov22), and all files for that sampling time-period/season can be housed within this newly-created directory.
 
 :label: **File naming system**: Individal .hobo files should be named with the region, site number, deployment location, and deployement depth or height as follows: 
-```SiteID_DeployementLocation_depthORheight``` for example, *'Rio.Blanco_shade_25cm.hobo'*. ***IMPORTANT:*** **This name should also match the 
+```SiteID_DeployementLocation_depthORheight``` for example, *'Rio.Blanco_shade_25cm.hobo'*. :bangbang:***IMPORTANT:*** **This name should also match the 
 '*hobo_name*' colomn in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet.** 
 
 Deployment location and height/depth categories are: 
