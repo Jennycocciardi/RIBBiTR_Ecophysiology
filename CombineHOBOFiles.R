@@ -10,12 +10,9 @@ library(readxl)
 library(writexl)
 library(dplyr)
 
-# Set working directory to folder containing the Excel files - this should be a new 
-# directory called 'output' as specified in the trimmining script.
-setwd("/path/to/folder/containing/excel/files")
-
-# Set output directory for new files - this insures that we are not overwriting the originals
-out_dir <- "/path/to/new/folder/for/output"
+# Set working directory to folder containing data files - this should be a new 
+# directory called 'output' as specified in the trimming script.
+setwd("/path/to/folder/containing/files")
 
 # Extract the site, deployment location, and height/depth from each file and create new columns.
 # List all .csv files in the folder
@@ -23,7 +20,7 @@ file_list <- list.files(pattern = "*.csv")
 
 # Loop over files and extract the desired part of the file name to make new column
 for (file_name in file_list) {
-  # Read the Excel file
+  # Read the file
   data <- read.csv(file_name)
 
   # Extract site from file name *note, this will only work if files names are 
@@ -47,8 +44,9 @@ for (file_name in file_list) {
   # Get the file name without extension
   file_name_without_ext <- file_path_sans_ext(basename(file_name))
   data$hobo_name <- file_name_without_ext
+  data$hobo_name <- gsub("\\_trimmed", "", data$hobo_name)
   
-  # Save the modified data to a new Excel file with a modified file name, and in a new directory
+  # Save the modified data to a new file with a modified file name
   write.csv(data, paste0("new_", file_name))
 }
 
@@ -60,13 +58,15 @@ for (file_name in file_list) {
 file_list <- list.files(pattern = "new_*")
 
 # Combine the data frames into one data frame, adding the grouping variable
-combined_df <- bind_rows(dfs, .id = "file_name") %>%
+combined_df <- bind_rows(lapply(file_list, read.csv)) %>%
   select(hobo_name, site, location, height, everything())
+
+# Write one overall dataframe
+write.csv(combined_df, file = "combined.csv")
 
 # Split the combined data frame into separate data frames based on the grouping variable
 split_dfs <- split(combined_df, f = combined_df$location)
 
 # Write each data frame to a separate file based on the grouping variable
 walk(split_dfs, ~ write.csv(.x, paste0(.x$location[1], ".csv")))
-
 
