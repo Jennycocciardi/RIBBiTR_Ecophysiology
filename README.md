@@ -14,7 +14,7 @@ found within the Ecophysiology team's google drive folder.***
 
 ### Setting up HOBO loggers and downloading HOBO data
 
-Hobo loggers can be set-up using HoboWare or using the waterproof data shuttle (U-DTW-1 shuttle – NOTE: requires HOBOware Pro software). 
+Hobo loggers can be set-up using HOBOware or using the waterproof data shuttle (U-DTW-1 shuttle – NOTE: requires HOBOware Pro software). 
 :bangbang:***IMPORTANT:*** Please ensure that when setting up the loggers that your computer's clock and timezone are accurate - HoboWare uses this to
 set the clock on the loggers *AND* that all loggers are setup using the same timezone *AND* the timezone matches the timezone where you are deploying the loffers.
 
