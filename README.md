@@ -18,7 +18,7 @@ Hobo loggers can be set-up using HOBOware or using the waterproof data shuttle (
 :bangbang:***IMPORTANT:*** Please ensure that when setting up the loggers that your computer's clock and timezone are accurate - HoboWare uses this to
 set the clock on the loggers *AND* that all loggers are setup using the same timezone *AND* the timezone matches the timezone where you are deploying the loffers.
 
-Data can be downloaded also using the waterproof data shuttle which can store data until you reach a computer, or the USB shuttle (BASE-U-4) directly 
+Data can be downloaded using the waterproof data shuttle which can store data until you reach a computer, or the USB shuttle (BASE-U-4) directly 
 connected to a computer. Bluetooth data loggers are launched and data can be downloaded via the HOBOconnect App.
 
 :bangbang:***IMPORTANT***: Date and time of deployment and date and time the logger was removed from the field should be recorded in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet
