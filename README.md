@@ -77,11 +77,6 @@ More information on setting up thermal cameras can be found in the 'RIBBiTR: Cor
 ### Storing thermal images 	:file_folder:
 
 :file_folder: **Storage**: All thermal images/FLIR photos will be stored in the ['Thermal Images_FLIR photos'](https://drive.google.com/drive/folders/1_8dMZ86P7BmLn0GG9zTTS8RomSaohe_2?usp=sharing) google drive folder. To standardize
-storage, please create a new folder within your study system (i.e., Brazil, Panama, etc.) directory with the following
-naming convention... *'DATE_Site'*. The date should be the date the photos were taken in 'YR,MO,DAY' format (for example, 220725),
-and the site should be the site name. 
-
-:label: **File naming system**: Individal thermal images should be named with the Transect # or Site Name, the transect meter the photo
-was taken at, the cardinal direction in which the photo was taken, and the photo ID as follows: *'Site_transect-m_direction_imageID'*. For example, a thermal image taken at Sante Fe at meter 60 along the transect and facing E should be *'SanteFe_60m_E_4790'*.
-
+storage, please create a new folder within your study system (i.e., Brazil, Panama, etc.) directory with the fieldwork season/period as the
+naming convention.
 
