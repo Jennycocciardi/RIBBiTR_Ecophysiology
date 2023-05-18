@@ -49,8 +49,10 @@ directory as the data files (there should be one for each study system per sampl
 ```
 hobo_name, start_date.time, stop_date.time
 ```
-The hobo_name column will be the reference ID, so make sure this column matches the file names precisely. Please see the ['*trimming_info.csv*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/trimming_info.csv) file in this repository 
-for an example of how the file should be formatted.
+The *'hobo_name'* column will be the reference ID, so make sure this column matches the file names precisely. 
+The *'start_date.time'* and *'stop_date.time'* information should be obtained from the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet.
+I've found that the time recorded may not be exactly when the loggers were deployed/removed from the field, and so it's best to trim the data an extra by ~5 hrs to remove any inaccuracies. Please see the ['*trimming_info.csv*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/trimming_info.csv) file in this repository 
+for an example of how this metadata file should be formatted.
 
 ### Concatenating HOBO data
 
