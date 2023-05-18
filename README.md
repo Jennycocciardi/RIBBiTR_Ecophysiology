@@ -44,13 +44,15 @@ Deployment location and height/depth categories are:
 The Ecophysiology team will export, trim, and combine the microclimate data collected by field teams for entry into the RIBBiTR Database. 
 
 Use HOBOware Pro to 'bulk export' files from the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google 
-drive folder. Settings for export in HOBOware should be as follows: Export file type = .csv; Date format = YMD; Date seperator = Slash(/); Time format = 24-Hour. All
+drive folder to a local directory. 
+Settings for export in HOBOware should be as follows: Export file type = .csv; Date format = YMD; Date seperator = Slash(/); Time format = 24-Hour. All
 other default settings can be used.
 
 ### Trimming HOBO data :scissors:
 
 Before trimming data, ensure that all files are logged in the same timezone. The format of data within the date-time column should also be standardized. To check the
-timezone of files, standardize column names and formats, and trim data, use the ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script.
+timezone of files, standardize column names and formats, and to trim data, use the ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script. This script will create an output folder within the local directory, where it
+will create a new *'.csv'* for each file with the naming convention: *'SiteID_DeployementLocation_depthORheight_trimmed.csv'* (for example, *'Admin_sun_50cm_trimmed.csv'*).
 
 The ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script requires an additional metadata file
 that contains logger start and stop times to automate trimming. This file should be named '*trimming_info.csv*' and should be placed within the same
@@ -68,7 +70,9 @@ for an example of how to format.
 
 After trimming the data, the Ecophysiology team will combine data across sites for input into the RIBBiTR Database. 
 The ['*CombineHOBOfiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/CombineHOBOFiles.R) script can be used to create an overall, 
-*'combined.csv'*, in addition to one .csv file per deployemnet location for each study system (e.g., *'sun.csv'*, *'shade.csv'*). 
+*'combined.csv'*, in addition to one .csv file per deployement location for each study system (e.g., *'sun.csv'*, *'shade.csv'*). This script will use the
+the *'_trimmed.csv'* files in the 'output' directory and create columns based on the name of each file to add a *'Site'*, *'Location'*, and *'Height'* column, before 
+combining files.
 
 ___
 ## THERMAL IMAGES
