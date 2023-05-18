@@ -61,6 +61,10 @@ file_list <- list.files(pattern = "new_*")
 combined_df <- bind_rows(lapply(file_list, read.csv)) %>%
   select(hobo_name, site, location, height, everything())
 
+# if we cannot bind because the rows are not the same 'character/integar' type... use this command:
+  # combined_df <- bind_rows(lapply(file_list, function(file) read.csv(file, colClasses = "character"))) %>%
+  # select(hobo_name, site, location, height, everything())
+
 # Write one overall dataframe
 write.csv(combined_df, file = "combined.csv")
 

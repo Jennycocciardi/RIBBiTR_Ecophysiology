@@ -3,27 +3,45 @@
 # email: jmcoccia@olemiss.edu
 # Date: 2023-April-19
 
-# Before starting, make sure that all files are standardized to the same timezone of where
-# the loggers were deployed.
-
 library(dplyr)
+library(tidyverse)
 
-# Loop over each file in the directory
+
+# Loop over each file in the directory to create a file list
 file_list <- list.files(pattern = "*.csv")
 
+# Before starting, make sure that all files are standardized to the same timezone by 
+# checking timezone column.
+for (file_name in file_list) {
+  # Read the CSV file
+  data <- read.csv(file_name)
+  
+  # Get the column names that start with the desired string
+  desired_string <- "Date"
+  filtered_columns <- names(data)[startsWith(names(data), desired_string)]
+  
+  # Print the filtered column names
+  print(paste0(file_name, " is in timezone ", filtered_columns))
+  
+}
+
+# Standardize to same timezone if needed.
+
+# Now, loop over files to standardize columns
 for (file_name in file_list) {
   if (endsWith(file_name, ".csv") & file_name != "trimming_info.csv") {
   # Read the .csv file (if files are exported as .xlsx, parts of this code will have to be modified)
   data <- read.csv(file_name)
   
   # Create column with timezone info
-  data$timezone <- rep(grep("Date", names(data), value = TRUE), nrow(data))
+  data$timezone <- sub("\\.(.*)\\.", "-\\1:", sub(".*\\.(GMT\\..*)", "\\1", names(data)[1]))
   
   # Rename the columns
   colnames(data)[which(colnames(data) == grep("Date", names(data), value = TRUE))] <- "date.time"
-  colnames(data)[which(colnames(data) == "Temp...C")] <- "temp.C"
+  colnames(data)[which(colnames(data) == "Temp...C")] <- "Temperature"
   colnames(data)[which(colnames(data) == "RH...")] <- "RH"
-  colnames(data)[which(colnames(data) == "DewPoint...C")] <- "dewpt.C"
+  colnames(data)[which(colnames(data) == "DewPoint...C")] <- "DewPoint"
+  colnames(data)[which(colnames(data) == "Intensity..Lux")] <- "Intensity.Lux"
   
   # Write the data to a new file
   write.csv(data, file_name)
@@ -56,6 +74,9 @@ library(xts)
 
 trimming_info <- read.csv("trimming_info.csv")
 
+# I've found the field teams may not record exactly when the loggers are deployed/removed from the field,
+# so it's best to trim the data by ~5 hrs to remove any inaccuracies. 
+
 # Make sure date and time are in a common format and recognized as date in R. 
 # To do this, use the as.POSIXct and specify the current format the date.time is in.
 # For example, if date.time of start and stop for loggers is currently formatted to 
@@ -66,17 +87,20 @@ trimming_info <- read.csv("trimming_info.csv")
 
 trimming_info$start_date.time <- as.POSIXct(trimming_info$start_date.time, 
                                             format = "%m/%d/%y %H:%M")
-# This displays timezone as UTC, so change this based on timezone of data collection.
-# Use this function OlsonNames() along with this website https://en.wikipedia.org/wiki/List_of_tz_database_time_zones 
-# to check which timezones are recognized by force_tz.
-# This will not convert the time but it will force the timezone.
-# options used: "Etc/GMT+4", "Brazil/DeNoronha", "America/Los_Angeles", "America/Panama"
+# Change 'start_date.time' and 'stop_date.time' info based on timezone of data collection.
+# Use this function OlsonNames()to check which timezones are recognized by force_tz.
+# (This website https://en.wikipedia.org/wiki/List_of_tz_database_time_zones is also useful).
+
+# 'force_tz' will not convert the time but it will force the timezone.
+
+# options used for RIBBiTR data: "Etc/GMT+5", "Brazil/DeNoronha", "America/Los_Angeles", "America/Panama"
+
 trimming_info$start_date.time <- force_tz(trimming_info$start_date.time, 
-                                          tzone = "Etc/GMT+4")
+                                          tzone = "Etc/GMT+5")
 trimming_info$stop_date.time <- as.POSIXct(trimming_info$stop_date.time, 
                                             format = "%m/%d/%y %H:%M")
 trimming_info$stop_date.time <- force_tz(trimming_info$stop_date.time, 
-                                         tzone = "Etc/GMT+4")
+                                         tzone = "Etc/GMT+5")
 
 
 ## Create and set output directory for new files - this insures that we are not overwriting the originals
@@ -99,14 +123,14 @@ for (file_name in file_list) {
   # Convert to POSIXct format to match trimming_info.csv file 
       # (the name of data.time colomn in data files will differ depending on the timezone)
   data$date.time <- as.POSIXct(data$date.time,format = "%y/%m/%d %H:%M:%S")
-  data$date.time <- force_tz(data$date.time, tzone = "Etc/GMT+4")
+  data$date.time <- force_tz(data$date.time, tzone = "Etc/GMT+5")
   
   # Get the trimming information for this file
   trimming <- trimming_info[trimming_info$hobo_name == file_name_without_ext, ]
   
   # Filter the data based on the trimming start and end times
-   data.trimmed <- data[data$date.time >= trimming$start_date.time &
-                       data$date.time <= trimming$stop_date.time, ]
+   data.trimmed <- data[data$date.time > trimming$start_date.time &
+                       data$date.time < trimming$stop_date.time, ]
   
   # If only one side needs trimming (depending on whether loggers were started/stopped in field)
   # data.trimmed <- data[data$date.time >= trimming$start_date.time, ]
