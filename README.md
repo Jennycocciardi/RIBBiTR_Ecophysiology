@@ -49,7 +49,8 @@ directory as the data files (there should be one for each study system per sampl
 ```
 hobo_name, start_date.time, stop_date.time
 ```
-The hobo_name column will be the reference ID, so make sure this column matches the file names precisely.
+The hobo_name column will be the reference ID, so make sure this column matches the file names precisely. Please see the ['*trimming_info.csv*'] file in this repository 
+for an example of how the file should be formatted.
 
 ### Concatenating HOBO data
 
