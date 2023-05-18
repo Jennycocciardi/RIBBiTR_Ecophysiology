@@ -39,9 +39,18 @@ Deployment location and height/depth categories are:
      sun_50cm       shade_50cm                        water_35cm                 
   ```  
 
+### Exporting HOBO files :inbox_tray:
+
+The Ecophysiology team will export, trim, and combine the microclimate data collected by field teams for entry into the RIBBiTR Database. 
+
+Use HOBOware Pro to 'bulk export' files from the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google 
+drive folder. Settings for export in HOBOware should be as follows: Export file type = .csv; Date format = YMD; Date seperator = Slash(/); Time format = 24-Hour. All
+other default settings can be used.
+
 ### Trimming HOBO data :scissors:
 
-Before trimming data, ensure that all files are using the same timezone. Also prior to trimming files, the date-time column in files should be standardized. This can be easily done using the ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script, which includes code for standardizing colomn names, as well as the code for trimming data.
+Before trimming data, ensure that all files are logged in the same timezone. The format of data within the date-time column should also be standardized. To check the
+timezone of files, standardize column names and formats, and trim data, use the ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script.
 
 The ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script requires an additional metadata file
 that contains logger start and stop times to automate trimming. This file should be named '*trimming_info.csv*' and should be placed within the same
@@ -51,13 +60,15 @@ hobo_name, start_date.time, stop_date.time
 ```
 The *'hobo_name'* column will be the reference ID, so make sure this column matches the file names precisely. 
 The *'start_date.time'* and *'stop_date.time'* information should be obtained from the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet.
-I've found that the time recorded may not be exactly when the loggers were deployed/removed from the field, and so it's best to trim the data an extra by ~5 hrs to remove any inaccuracies. Please see the ['*trimming_info.csv*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/trimming_info.csv) file in this repository 
-for an example of how this metadata file should be formatted.
+I've found that the time recorded may not be exactly when the loggers were deployed/removed from the field, and so it's best to trim the data by an extra ~5 hrs 
+to remove inaccuracies. Please see the ['*trimming_info.csv*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/trimming_info.csv) file in this repository 
+for an example of how to format.
 
 ### Concatenating HOBO data
 
-We will combine data across sites from the same deployement locations (e.g., sun, shade) for analysis purposes. Before starting, make sure that 
-individual .hobo files are named *'SiteID_DeployementLocation_depthORheight'*. The ['*CombineHOBOfiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/CombineHOBOFiles.R) script can then be used to create one .csv file per deployemnet location for each study system. 
+After trimming the data, the Ecophysiology team will combine data across sites for input into the RIBBiTR Database. 
+The ['*CombineHOBOfiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/CombineHOBOFiles.R) script can be used to create an overall, 
+*'combined.csv'*, in addition to one .csv file per deployemnet location for each study system (e.g., *'sun.csv'*, *'shade.csv'*). 
 
 ___
 ## THERMAL IMAGES
