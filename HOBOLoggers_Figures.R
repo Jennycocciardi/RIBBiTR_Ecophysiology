@@ -105,8 +105,7 @@ Pennsylvania (RV)") +
                    expand = c(0, 0)) +
   scale_y_continuous(breaks=seq(2.5,22.5,2.5),limits = c(2.5,22.5)) +
   scale_color_manual(breaks = c("shade", "sun", "soil", "water"),
-                     values = c("#FFCC00","#009900","#993300","#0066cc"),
-                     labels = c("sun", "shade", "soil", "water")) +
+                     values = c("#009900","#FFCC00","#993300","#0066cc")) +
   theme_bw() +
   theme(panel.grid = element_blank(),
         axis.title = element_text(size=9),
