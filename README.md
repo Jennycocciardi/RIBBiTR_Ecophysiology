@@ -26,7 +26,7 @@ found within the Ecophysiology team's google drive folder.
 
 ### Storing HOBO data :file_folder:
 
-:file_folder: **Storage**: Please store all HOBO data as .hobo files. All HOBO data will be stored in the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google drive folder. To standardize storage, please create a new folder within the directory for your study system (i.e., Brazil, Panama, etc.) with the following naming convention... ```'HOBOS_MonthYrDeployed_MonthYrStopped'```. The date should be in the 'Month,Year' format (for example, Nov22), and all files for that sampling time-period/season can be housed within this newly-created directory.
+:file_folder: **Storage**: Please store all HOBO data as .hobo files. All HOBO data will be stored in the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google drive folder. To standardize storage, please create a new folder within the directory for your study system (i.e., Brazil, Panama, etc.) with the following naming convention... ```HOBOS_MonthYrDeployed_MonthYrStopped```. The date should be in the 'Month,Year' format (for example, Nov22), and all files for that sampling time-period/season can be housed within this newly-created directory.
 
 :label: **File naming system**: Individal .hobo files should be named with the region, site number, deployment location, and deployement depth or height as follows: 
 ```SiteID_DeployementLocation_depthORheight``` for example, *'Rio.Blanco_shade_25cm.hobo'*. :bangbang:***IMPORTANT:*** **This name should also match the 
@@ -60,8 +60,8 @@ directory as the data files (there should be one for each study system per sampl
 ```
 hobo_name, start_date.time, stop_date.time
 ```
-The *'hobo_name'* column will be the reference ID, so make sure this column matches the file names precisely. 
-The *'start_date.time'* and *'stop_date.time'* information should be obtained from the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet.
+The ```hobo_name``` column will be the reference ID, so make sure this column matches the file names precisely. 
+The ```start_date.time``` and ```stop_date.time``` information should be obtained from the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet.
 I've found that the time recorded may not be exactly when the loggers were deployed/removed from the field, and so it's best to trim the data by an extra ~5 hrs 
 to remove inaccuracies. Please see the ['*trimming_info.csv*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/trimming_info.csv) file in this repository 
 for an example of how to format.
@@ -71,8 +71,16 @@ for an example of how to format.
 After trimming the data, the Ecophysiology team will combine data across sites for input into the RIBBiTR Database. 
 The ['*CombineHOBOfiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/CombineHOBOFiles.R) script can be used to create an overall, 
 *'combined.csv'*, in addition to one .csv file per deployement location for each study system (e.g., *'sun.csv'*, *'shade.csv'*). This script will use the
-the *'_trimmed.csv'* files in the 'output' directory and create columns based on the name of each file to add a *'Site'*, *'Location'*, and *'Height'* column, before 
+the *'_trimmed.csv'* files in the 'output' directory and create columns based on the name of each file to add a ```Site```, ```Location```, and ```Height``` column, before 
 combining files.
+
+### Long-term storage
+
+The *'combined.csv'* file will be sent to the RIBBiTR Database Manager for input into the database. 
+In addition, place the combined and the seperate .csv files for each deployement location for each study system and time period within the 
+'RIBBiTR Study Sites_HOBO Logger Data' directory found in the 'Data' directory in the 'Ohmer Lab' google drive. Create a new folder for each time 
+period within the relevant study area's directory. 
+Raw data files will also be stored on the Ohmer Lab's harddrive, as well as within the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google drive folder in the 'Ecophyisology' team's google drive.
 
 ___
 ## THERMAL IMAGES
