@@ -70,6 +70,7 @@ trimming_info$start_date.time <- as.POSIXct(trimming_info$start_date.time,
 # Use this function OlsonNames() along with this website https://en.wikipedia.org/wiki/List_of_tz_database_time_zones 
 # to check which timezones are recognized by force_tz.
 # This will not convert the time but it will force the timezone.
+# options used: "Etc/GMT+4", "Brazil/DeNoronha", "America/Los_Angeles", "America/Panama"
 trimming_info$start_date.time <- force_tz(trimming_info$start_date.time, 
                                           tzone = "Etc/GMT+4")
 trimming_info$stop_date.time <- as.POSIXct(trimming_info$stop_date.time, 
