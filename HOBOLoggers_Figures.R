@@ -41,10 +41,6 @@ library(RColorBrewer)
 display.brewer.all(colorblindFriendly = TRUE)
 library(gridExtra)
 
-data <- subset(data, hobo_name != "70470_sun_50cm")
-data <- subset(data, hobo_name != "70449_sun_50cm")
-data <- subset(data, hobo_name != "52127_sun_50cm")
-
 # Line plot by deployment location
 ggplot(data = subset(data, grepl("\\b50cm\\b", height)), # when need to subset data based on height/depth
 # ggplot(data, 
