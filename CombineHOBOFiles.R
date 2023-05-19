@@ -54,7 +54,7 @@ for (file_name in file_list) {
 # Combine files by deployment location so that we have one file per location (e.g., sun, shade, 
 # water, etc.)
 
-# List all files in the folder. Will need to do this again since we have a new folder.
+# List all files in the folder. Will need to do this again since we have newly created files.
 file_list <- list.files(pattern = "new_*")
 
 # Combine the data frames into one data frame, adding the grouping variable
