@@ -25,9 +25,9 @@ found within the Ecophysiology team's google drive folder.
 
 ### Storing HOBO data :file_folder:
 
-:file_folder: **Storage**: Please store all HOBO data as **.hobo** files. All HOBO data will be stored in the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google drive folder. To standardize storage, please create a new folder within the directory for your study system (i.e., Brazil, Panama, etc.) with the following naming convention... ```HOBOS_MonthYrDeployed_MonthYrStopped```. The date should be in the 'Month,Year' format (for example, Nov22), and all files for that sampling time-period/season can be housed within this newly-created directory.
+:file_folder: **Storage**: Please store all HOBO data as **.hobo** files in the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google drive folder. To standardize storage, please create a new folder within your study system's directory (i.e., Brazil, Panama, etc.) with the following naming convention... ```HOBOS_MonthYrDeployed-MonthYrStopped``` for example, *'HOBOs_Nov22-Feb23*'. All files for that sampling time-period/season can be housed within this newly-created directory.
 
-:label: **File naming system**: Individal .hobo files should be named with the site ID, deployment location, and deployement depth or height as follows: 
+:label: **File naming system**: Individal .hobo files should be named with the site ID, deployment location, and deployement depth/height as follows: 
 ```SiteID_DeployementLocation_depthORheight``` for example, *'Rio.Blanco_shade_25cm.hobo'*. 
 
 :bangbang:***IMPORTANT:*** **This name should also match the 
@@ -41,6 +41,7 @@ Deployment location and height/depth categories are:
 
 ### Exporting HOBO files :inbox_tray:
 
+The following steps will be completed by the Ecophysiology team.
 The Ecophysiology team will export, trim, and combine the microclimate data collected by field teams for entry into the RIBBiTR Database. 
 
 Use HOBOware Pro to 'bulk export' files from the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google 
