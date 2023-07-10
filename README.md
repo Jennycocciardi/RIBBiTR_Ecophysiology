@@ -3,7 +3,7 @@
 This repository contains important information for collecting, storing, and analyzing environmental data (via HOBO loggers) and thermal images for sites collected as part of RIBBiTR. 
 
 ___
-## HOBO DATA
+## HOBO DATA - FOR FIELD TEAMS
 
 HOBO data loggers will be deployed within all study systems to collect detailed measurements of amphibian-relevant microclimates, and to verify
 temperatures downscaled from global temperature databases. HOBO data loggers will record microclimate at 3-5 key sites within each study system,
@@ -16,21 +16,21 @@ found within the Ecophysiology team's google drive folder.***
 
 Hobo loggers can be set-up using HOBOware or using the waterproof data shuttle. 
 
-***IMPORTANT:***:bangbang: Please ensure that when setting up the loggers that your computer's clock and timezone are accurate (HOBOWare uses this to
+***Important:***:bangbang: Please ensure that when setting up the loggers that your computer's clock and timezone are accurate (HOBOWare uses this to
 set the clock on the loggers). Please also check that all loggers are setup using the same timezone *AND* that this timezone matches where you are deploying the loggers.
 Please refer to the 'RIBBiTR: Core Protocols' document for more information on setting up and deploying HOBO loggers.
 
-***IMPORTANT***:bangbang:: Date and time of deployment and date and time the logger was removed from the field should be recorded in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet
+***Important***:bangbang:: Date and time of deployment and date and time the logger was removed from the field should be recorded in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet
 found within the Ecophysiology team's google drive folder.
 
 ### Storing HOBO data
 
-**Storage** :file_folder:: Please store all HOBO data as **.hobo** files in the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google drive folder. To standardize storage, please create a new folder within your study system's directory (i.e., Brazil, Panama, etc.) with the following naming convention... ```HOBOS_MonthYrDeployed-MonthYrStopped``` for example, *'HOBOs_Nov22-Feb23*'. All files for that sampling time-period/season can be housed within this newly-created directory.  :camera: All photos of HOBO loggers can also be placed within this directory.
+**Storage** :file_folder:: Please store all files as **.hobo** files in the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google drive folder. To standardize storage, please create a new folder within your study system's directory (i.e., Brazil, Panama, etc.) with the following naming convention... ```HOBOS_MonthYrDeployed-MonthYrStopped``` for example, *'HOBOs_Nov22-Feb23*'. All files for that sampling time-period/season can be housed within this newly-created directory.  :camera: All photos of HOBO loggers can also be placed within this directory.
 
 **File naming system** :label:: Individal .hobo files should be named with the site ID, deployment location, and deployement depth/height as follows: 
 ```SiteID_DeployementLocation_depthORheight``` for example, *'Rio.Blanco_shade_25cm.hobo'*. 
 
-***IMPORTANT:***:bangbang: **This name should also match the 
+***Important:***:bangbang: **This name should also match the 
 '*hobo_name*' colomn in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet.** 
 Deployment location and height/depth categories are: 
   ```
@@ -38,6 +38,8 @@ Deployment location and height/depth categories are:
      sun_25cm       shade_25cm        soil_-10cm      water_20cm
      sun_50cm       shade_50cm                        water_35cm                 
   ```  
+
+## HOBO DATA - FOR ECOPHYSIOLOGY TEAM
 
 ### Exporting HOBO files :inbox_tray:
 
