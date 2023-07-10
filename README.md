@@ -52,7 +52,7 @@ other default settings can be used.
 ### Trimming HOBO data :scissors:
 
 Before trimming data, we need to check that all files are logged in the same timezone. The format of data within the date-time column should also be standardized. To check the
-timezone of files, standardize column names and formats, and to trim data, use the ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script. This script will create a new 'output' folder within the local directory, where it
+timezone of files, standardize column names, standardize formats, and to trim data, use the ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script. This script will create a new 'output' folder within your local directory, where it
 will create a new *'.csv'* for each file with the naming convention: *'SiteID_DeployementLocation_depthORheight_trimmed.csv'* (for example, *'Admin_sun_50cm_trimmed.csv'*).
 
 The ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script requires an additional metadata file
