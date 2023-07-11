@@ -6,6 +6,9 @@
 library(dplyr)
 library(tidyverse)
 
+#check working directory and set working directory
+getwd()
+setwd("path to local directory")
 
 # Loop over each file in the directory to create a file list
 file_list <- list.files(pattern = "*.csv")
@@ -27,7 +30,11 @@ for (file_name in file_list) {
 
 # Standardize to same timezone if needed.
 
+
 # Now, loop over files to standardize columns
+# we will create new files instead of writing over the original data files - this is best practice
+
+
 for (file_name in file_list) {
   if (endsWith(file_name, ".csv") & file_name != "trimming_info.csv") {
   # Read the .csv file (if files are exported as .xlsx, parts of this code will have to be modified)
@@ -38,17 +45,23 @@ for (file_name in file_list) {
   
   # Rename the columns
   colnames(data)[which(colnames(data) == grep("Date", names(data), value = TRUE))] <- "date.time"
-  colnames(data)[which(colnames(data) == "Temp...C")] <- "Temperature"
-  colnames(data)[which(colnames(data) == "RH...")] <- "RH"
-  colnames(data)[which(colnames(data) == "DewPoint...C")] <- "DewPoint"
-  colnames(data)[which(colnames(data) == "Intensity..Lux")] <- "Intensity.Lux"
+  colnames(data)[which(colnames(data) == "Temp...C")] <- "temperature"
+  colnames(data)[which(colnames(data) == "RH...")] <- "rh"
+  colnames(data)[which(colnames(data) == "DewPoint...C")] <- "dewpoint"
+  colnames(data)[which(colnames(data) == "Intensity..Lux")] <- "intensity.lux"
+  
+  file_name_without_ext<- file_path_sans_ext(basename(file_name))
   
   # Write the data to a new file
-  write.csv(data, file_name)
+  write.csv(data, paste0(file_name_without_ext,"_mod.csv"))
   }
   }
 
+
 # Check to make sure all files have new 'date.time' column
+file_list <- list.files(pattern = "*_mod.csv")
+
+
 for (file in file_list) {
   # read in the data
   data <- read.csv(file)
@@ -65,6 +78,7 @@ library(tidyverse)
 library(lubridate)
 library(tools)
 library(xts)
+
 
 
 # To trim HOBO data based on when the logger was deployed and collected from the field,
@@ -96,34 +110,41 @@ trimming_info$start_date.time <- as.POSIXct(trimming_info$start_date.time,
 # options used for RIBBiTR data: "Etc/GMT+5", "Brazil/DeNoronha", "America/Los_Angeles", "America/Panama"
 
 trimming_info$start_date.time <- force_tz(trimming_info$start_date.time, 
-                                          tzone = "Etc/GMT+5")
+                                          tzone = "Brazil/DeNoronha")
 trimming_info$stop_date.time <- as.POSIXct(trimming_info$stop_date.time, 
-                                            format = "%m/%d/%y %H:%M")
+                                            format = "%y/%m/%d %H:%M:%S")
 trimming_info$stop_date.time <- force_tz(trimming_info$stop_date.time, 
-                                         tzone = "Etc/GMT+5")
+                                         tzone = "Brazil/DeNoronha")
+
+
 
 
 ## Create and set output directory for new files - this insures that we are not overwriting the originals
  dir.create("output")
- out_dir <- "/path/to/new/folder/for/output"
+ out_dir <- "/path/to/folder/for/output"
 
+ 
+ 
 # Loop over each file in the directory
-file_list <- list.files(pattern = "*.csv")
+file_list <- list.files(pattern = "*_mod.csv")
 
 for (file_name in file_list) {
   if (endsWith(file_name, ".csv") & file_name != "trimming_info.csv") {
     
     # Get the file name without extension
-    file_name_without_ext <- file_path_sans_ext(basename(file_name))
+    file_name_without_ext <- sub("\\.csv$", "", file_name)
+    file_name_without_ext <- sub("_mod$", "", file_name_without_ext)
+    
     # Check if the file is included in the trimming information file
     if (file_name_without_ext %in% trimming_info$hobo_name) {
+
       # Read the data into R
       data <- read.csv(file_name)
   
   # Convert to POSIXct format to match trimming_info.csv file 
       # (the name of data.time colomn in data files will differ depending on the timezone)
   data$date.time <- as.POSIXct(data$date.time,format = "%y/%m/%d %H:%M:%S")
-  data$date.time <- force_tz(data$date.time, tzone = "Etc/GMT+5")
+  data$date.time <- force_tz(data$date.time, tzone = "Brazil/DeNoronha")
   
   # Get the trimming information for this file
   trimming <- trimming_info[trimming_info$hobo_name == file_name_without_ext, ]
