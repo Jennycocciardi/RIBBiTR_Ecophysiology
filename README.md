@@ -89,10 +89,10 @@ period within the relevant study area's directory.
 Raw .hobo files will also be stored on the Ohmer Lab's harddrive, as well as within the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google drive folder in the 'Ecophyisology' team's google drive.
 
 ___
-## THERMAL IMAGES :camera_flash:
+## THERMAL IMAGES :camera_flash: - FOR FIELD TEAMS
 
 This [sign-out sheet](https://docs.google.com/spreadsheets/d/17hg0DTGzJy9akMPVVxuNyOvGWWmSTO8_/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) has information on where thermal camera's associated with
-RIBBiTR are housed or which teams are using them. You can refer to it to organize obtaining a thermal camera for 
+RIBBiTR are housed and which teams are using them. You can refer to it to organize obtaining a thermal camera for 
 field sites and seasons.
 
 ### Setting up and Downloading thermal cameras :camera:
@@ -101,12 +101,23 @@ More information on setting up thermal cameras can be found in the 'RIBBiTR: Cor
 
 ### Metadata to collect in the field
 
-Please use Fulcrum to record metadata for each image in the field. Metadata should include the region, site ID, transect meter, and cardinal direction of image. Please record
+Please use Fulcrum to record metadata for each image in the field. Metadata should include the **region, site ID, transect meter, and cardinal direction** of image. Record
 the image # that will help us to link the metadata to each thermal photo. More information can be found in the 'RIBBiTR: Core Protocols' document.
 
-### Storing thermal images 	:file_folder:
+### Storing thermal images
 
 :file_folder: **Storage**: All thermal images/FLIR photos will be stored in the ['Thermal Images_FLIR photos'](https://drive.google.com/drive/folders/1_8dMZ86P7BmLn0GG9zTTS8RomSaohe_2?usp=sharing) google drive folder. To standardize
 storage, please create a new folder within your study system (i.e., Brazil, Panama, etc.) directory with the fieldwork season/period as the
-naming convention.
+naming convention, for example, *'FLIR_Nov22-Feb23*'.
 
+***Important:***:bangbang: Please make sure to add the relevant metadata for images to this folder.
+
+## THERMAL IMAGES :camera_flash: - FOR ECOPHYSIOLOGY TEAM
+
+### Organizing thermal images :file_folder:
+
+If field teams decided to annotate notes for each photo, rather than use Fulcrum, we can extract the metadata for each photo using the ['*FLIR_ExtractMetadata.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/FLIR_Extract_Metadata.R) script.
+
+### Long-term storage
+
+TBD
