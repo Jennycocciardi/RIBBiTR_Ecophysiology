@@ -104,6 +104,8 @@ More information on setting up thermal cameras can be found in the 'RIBBiTR: Cor
 Please use Fulcrum to record metadata for each image in the field. Metadata should include the **region, site ID, transect meter, and cardinal direction** of image. Record
 the image # that will help us to link the metadata to each thermal photo. More information can be found in the 'RIBBiTR: Core Protocols' document.
 
+Please download metadata with your thermal images and upload to the same folder below. 
+
 ### Storing thermal images
 
 :file_folder: **Storage**: All thermal images/FLIR photos will be stored in the ['Thermal Images_FLIR photos'](https://drive.google.com/drive/folders/1_8dMZ86P7BmLn0GG9zTTS8RomSaohe_2?usp=sharing) google drive folder. To standardize
