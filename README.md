@@ -82,7 +82,7 @@ combining files. This is why it is important to ensure that all files are named 
 The *'combined.csv'* file will be sent to the RIBBiTR Database Manager for input into the database (rename the file to include study area and time period, for example,
 *'PA_combined_Jul-Dec22.csv'*.
 
-In addition, place the combined and individual .csv files for each study system and time period within the 
+In addition, place the combined and individual .csv files for each study system (e.g., sun.csv, shade.csv, etc.) and time period within the 
 'RIBBiTR Study Sites_HOBO Logger Data' directory found in the 'Data' folder in the 'Ohmer Lab' google drive. Create a new folder for each time 
 period within the relevant study area's directory. 
 
