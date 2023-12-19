@@ -82,6 +82,7 @@ The ['*CombineHOBOfiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysio
 *'combined.csv'*, in addition to one .csv file per deployement location for each study system (e.g., *'sun.csv'*, *'shade.csv'*). This script will use the
 the newly created *'_trimmed.csv'* files in the 'output' directory and create columns based on the name of each file to add a ```Site```, ```Location```, and ```Height``` column, before 
 combining files. This is why it is important to ensure that all files are named as: *'SiteID_DeployementLocation_depthORheight_trimmed.csv'*.
+This script will also standardize the *'combined.csv'* for input into the RIBBiTR database.
 
 ### Long-term storage
 
