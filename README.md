@@ -53,7 +53,13 @@ other default settings can be used.
 
 ### Trimming HOBO data :scissors:
 
-Before trimming data, we need to check that all files are logged in the same timezone. The format of data within the date-time column should also be standardized. To check the
+Before trimming and standardizing data, please check that site names are in the same format as what was used previously. This may differ from
+year to year depending on how field teams have named sites, so please make sure they match the previously used nomenclature for each site by
+looking at the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet. Also, 
+it's good practice to doublecheck the file names to make sure they are named correctly as stated under the *'File naming system'* above (i.e.,
+```SiteID_DeployementLocation_depthORheight``` for example, *'Rio.Blanco_shade_25cm.hobo'*.) 
+
+We also need to check that all files are logged in the same timezone before trimming data. The format of data within the date-time column should also be standardized. To check the
 timezone of files, standardize column names, standardize formats, and to trim data, use the ['*TrimHOBOFiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/TrimHOBOFiles.R) script. This script will create a new 'output' folder within your local directory, where it
 will create a new *'.csv'* for each file with the naming convention: *'SiteID_DeployementLocation_depthORheight_trimmed.csv'* (for example, *'Admin_sun_50cm_trimmed.csv'*).
 
@@ -76,13 +82,14 @@ The ['*CombineHOBOfiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysio
 *'combined.csv'*, in addition to one .csv file per deployement location for each study system (e.g., *'sun.csv'*, *'shade.csv'*). This script will use the
 the newly created *'_trimmed.csv'* files in the 'output' directory and create columns based on the name of each file to add a ```Site```, ```Location```, and ```Height``` column, before 
 combining files. This is why it is important to ensure that all files are named as: *'SiteID_DeployementLocation_depthORheight_trimmed.csv'*.
+This script will also standardize the *'combined.csv'* for input into the RIBBiTR database.
 
 ### Long-term storage
 
 The *'combined.csv'* file will be sent to the RIBBiTR Database Manager for input into the database (rename the file to include study area and time period, for example,
 *'PA_combined_Jul-Dec22.csv'*.
 
-In addition, place the combined and individual .csv files for each study system and time period within the 
+In addition, place the combined and individual .csv files for each study system (e.g., sun.csv, shade.csv, etc.) and time period within the 
 'RIBBiTR Study Sites_HOBO Logger Data' directory found in the 'Data' folder in the 'Ohmer Lab' google drive. Create a new folder for each time 
 period within the relevant study area's directory. 
 
