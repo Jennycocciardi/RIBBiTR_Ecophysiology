@@ -5,6 +5,7 @@
 
 library(dplyr)
 library(tidyverse)
+library(tools)
 
 #check working directory and set working directory
 getwd()
@@ -12,6 +13,7 @@ setwd("path to local directory")
 
 # Loop over each file in the directory to create a file list
 file_list <- list.files(pattern = "*.csv")
+
 
 # Before starting, make sure that all files are standardized to the same timezone by 
 # checking timezone column.
@@ -100,7 +102,7 @@ trimming_info <- read.csv("trimming_info.csv")
 # More info can be found here: https://www.stat.berkeley.edu/~s133/dates.html
 
 trimming_info$start_date.time <- as.POSIXct(trimming_info$start_date.time, 
-                                            format = "%m/%d/%y %H:%M")
+                                            format = "%m/%d/%Y %H:%M")
 # Change 'start_date.time' and 'stop_date.time' info based on timezone of data collection.
 # Use this function OlsonNames()to check which timezones are recognized by force_tz.
 # (This website https://en.wikipedia.org/wiki/List_of_tz_database_time_zones is also useful).
@@ -110,18 +112,18 @@ trimming_info$start_date.time <- as.POSIXct(trimming_info$start_date.time,
 # options used for RIBBiTR data: "Etc/GMT+5", "Brazil/DeNoronha", "America/Los_Angeles", "America/Panama"
 
 trimming_info$start_date.time <- force_tz(trimming_info$start_date.time, 
-                                          tzone = "Brazil/DeNoronha")
+                                          tzone = "Etc/GMT+5")
 trimming_info$stop_date.time <- as.POSIXct(trimming_info$stop_date.time, 
-                                            format = "%y/%m/%d %H:%M:%S")
+                                           format = "%m/%d/%Y %H:%M")
 trimming_info$stop_date.time <- force_tz(trimming_info$stop_date.time, 
-                                         tzone = "Brazil/DeNoronha")
+                                         tzone = "Etc/GMT+5")
 
 
 
 
 ## Create and set output directory for new files - this insures that we are not overwriting the originals
  dir.create("output")
- out_dir <- "/path/to/folder/for/output"
+ out_dir <- file.path(getwd(), "output")
 
  
  
@@ -161,3 +163,8 @@ for (file_name in file_list) {
     }
   }
 }
+
+
+# check all files are in new directory
+length(list.files(getwd(), full.names = TRUE, pattern = "*_mod.csv"))
+length(list.files(out_dir, full.names = TRUE))

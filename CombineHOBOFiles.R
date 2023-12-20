@@ -64,8 +64,8 @@ combined_df <- bind_rows(lapply(file_list, read.csv)) %>%
   select(hobo_name, site, location, height, everything())
 
 # if we cannot bind because the rows are not the same 'character/integar' type... use this command:
-  # combined_df <- bind_rows(lapply(file_list, function(file) read.csv(file, colClasses = "character"))) %>%
-  # select(hobo_name, site, location, height, everything())
+   # combined_df <- bind_rows(lapply(file_list, function(file) read.csv(file, colClasses = "character"))) %>%
+   # select(hobo_name, site, location, height, everything())
 
 
 
@@ -74,7 +74,7 @@ combined_df <- bind_rows(lapply(file_list, read.csv)) %>%
     # StudyArea, hobo_name, Site, Location, Height, DateTime, Temperature, TimeZone, Intensity.Lux, RH, DewPoint
     # Select these columns to keep:
 columns_to_keep <- c("StudyArea","hobo_name", "Site", "Location", "Height", "DateTime", 
-                     "Temperature", "TimeZone", "Intensity.Lux", "RH", "DewPoint")
+                      "TimeZone", "Temperature", "Intensity.Lux", "RH", "DewPoint")
     
     # Rename columns and get rid of extra columns, add in StudyArea
 combined_df_database_ready <- combined_df %>%
@@ -88,7 +88,7 @@ combined_df_database_ready <- combined_df %>%
     Intensity.Lux = intensity.lux,
     RH = rh,
     DewPoint = DewPt...C)  %>%
-  mutate(StudyArea = 'PA') %>% #add a new column 'StudyArea' to indicate which study system the data 
+  mutate(StudyArea = 'Panama') %>% #add a new column 'StudyArea' to indicate which study system the data 
                            #is for - either PA, Brazil, Panama, SierraNevada 
   select(columns_to_keep) #select the columns to keep
 
