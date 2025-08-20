@@ -12,7 +12,7 @@ focusing on primary survey sites.
 ***All HOBO logger metadata should be recorded in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet
 found within the Ecophysiology team's google drive folder.***
 
-### Setting up HOBO loggers and downloading HOBO data
+### 1. Setting up HOBO loggers and downloading HOBO data
 
 Hobo loggers can be set-up using HOBOware or using the waterproof data shuttle. 
 
@@ -23,7 +23,7 @@ Please refer to the 'RIBBiTR: Core Protocols' document for more information on s
 ***Important***:bangbang:: Date and time of deployment and date and time the logger was removed from the field should be recorded in the ['HOBO logger deployment data'](https://docs.google.com/spreadsheets/d/1gfQ0dcc5GuQWfGMUiJk_oN1VKh7THmMT/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) spreadsheet
 found within the Ecophysiology team's google drive folder.
 
-### Storing HOBO data
+### 2. Storing HOBO data
 
 **Storage** :file_folder:: Please store all files as **.hobo** files in the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google drive folder. To standardize storage, please create a new folder within your study system's directory (i.e., Brazil, Panama, etc.) with the following naming convention... ```HOBOS_MonthYrDeployed-MonthYrStopped``` for example, *'HOBOs_Nov22-Feb23*'. All files for that sampling time-period/season can be housed within this newly-created directory.  :camera: All photos of HOBO loggers can also be placed within this directory.
 
@@ -41,7 +41,7 @@ Deployment location and height/depth categories are:
 
 ## HOBO Data - For Ecophysiology Team
 
-### Exporting HOBO files :inbox_tray:
+### 1. Exporting HOBO files :inbox_tray:
 
 The following steps will be completed by the Ecophysiology team.
 The Ecophysiology team will export, trim, and combine the microclimate data collected by field teams for entry into the RIBBiTR Database. 
@@ -51,7 +51,7 @@ drive folder to a local directory.
 Settings for export in HOBOware should be as follows: Export file type = .csv; Date format = YMD; Date seperator = Slash(/); Time format = 24-Hour. All
 other default settings can be used.
 
-### Trimming HOBO data :scissors:
+### 2. Trimming HOBO data :scissors:
 
 Before trimming and standardizing data, please check that site names are in the same format as what was used previously. This may differ from
 year to year depending on how field teams have named sites, so please make sure they match the previously used nomenclature for each site by
@@ -75,7 +75,7 @@ I've found that the time recorded may not be exactly when the loggers were deplo
 to remove inaccuracies. Please see the ['*trimming_info.csv*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/trimming_info.csv) file in this repository 
 for an example of how to format.
 
-### Concatenating HOBO data
+### 3. Concatenating HOBO data
 
 After trimming the data, the Ecophysiology team will combine data across sites for input into the RIBBiTR Database. 
 The ['*CombineHOBOfiles.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/CombineHOBOFiles.R) script can be used to create an overall, 
@@ -84,7 +84,7 @@ the newly created *'_trimmed.csv'* files in the 'output' directory and create co
 combining files. This is why it is important to ensure that all files are named as: *'SiteID_DeployementLocation_depthORheight_trimmed.csv'*.
 This script will also standardize the *'combined.csv'* for input into the RIBBiTR database.
 
-### Long-term storage
+### 4. Long-term storage
 
 The *'combined.csv'* file will be sent to the RIBBiTR Database Manager for input into the database (rename the file to include study area and time period, for example,
 *'PA_combined_Jul-Dec22.csv'*.
@@ -102,18 +102,18 @@ This [sign-out sheet](https://docs.google.com/spreadsheets/d/17hg0DTGzJy9akMPVVx
 RIBBiTR are housed and which teams are using them. You can refer to it to organize obtaining a thermal camera for 
 field sites and seasons.
 
-### Setting up and Downloading thermal cameras :camera:
+### 1. Setting up and Downloading thermal cameras :camera:
 
 More information on setting up thermal cameras can be found in the 'RIBBiTR: Core Protocols' document.
 
-### Metadata to collect in the field
+### 2. Metadata to collect in the field
 
 Please use Fulcrum to record metadata for each image in the field. Metadata should include the **region, site ID, transect meter, and cardinal direction** of image. Record
 the image # that will help us to link the metadata to each thermal photo. More information can be found in the 'RIBBiTR: Core Protocols' document.
 
 Please download metadata with your thermal images and upload to the same folder below. 
 
-### Storing thermal images
+### 3. Storing thermal images
 
 :file_folder: **Storage**: All thermal images/FLIR photos will be stored in the ['Thermal Images_FLIR photos'](https://drive.google.com/drive/folders/1_8dMZ86P7BmLn0GG9zTTS8RomSaohe_2?usp=sharing) google drive folder. To standardize
 storage, please create a new folder within your study system (i.e., Brazil, Panama, etc.) directory with the fieldwork season/period as the
@@ -123,7 +123,7 @@ naming convention, for example, *'FLIR_Nov22-Feb23*'.
 
 ## Thermal Images :camera_flash: - For Ecophysiology Team
 
-### Organizing thermal images :file_folder:
+### 1. Organizing thermal images :file_folder:
 
 If field teams decided to annotate notes for each photo, rather than use Fulcrum, we can extract the metadata for each photo using the ['*FLIR_ExtractMetadata.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/FLIR_ExtractMetadata.R) script.
 
