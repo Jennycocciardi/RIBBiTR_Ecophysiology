@@ -127,6 +127,6 @@ naming convention, for example, *'FLIR_Nov22-Feb23*'.
 
 If field teams decided to annotate notes for each photo, rather than use Fulcrum, we can extract the metadata for each photo using the ['*FLIR_ExtractMetadata.R*'](https://github.com/Jennycocciardi/RIBBiTR_Ecophysiology/blob/main/FLIR_ExtractMetadata.R) script.
 
-### Long-term storage
+### 2. Long-term storage
 
 TBD
