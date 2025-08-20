@@ -3,7 +3,7 @@
 This repository contains important information for collecting, storing, and analyzing environmental data (via HOBO loggers) and thermal images for sites collected as part of RIBBiTR. 
 
 ___
-## HOBO DATA - FOR FIELD TEAMS
+## HOBO Data - For Field Teams
 
 HOBO data loggers will be deployed within all study systems to collect detailed measurements of amphibian-relevant microclimates, and to verify
 temperatures downscaled from global temperature databases. HOBO data loggers will record microclimate at 3-5 key sites within each study system,
@@ -39,7 +39,7 @@ Deployment location and height/depth categories are:
      sun_50cm       shade_50cm                        water_35cm                 
   ```  
 
-## HOBO DATA - FOR ECOPHYSIOLOGY TEAM
+## HOBO Data - For Ecophysiology Team
 
 ### Exporting HOBO files :inbox_tray:
 
@@ -96,7 +96,7 @@ period within the relevant study area's directory.
 Raw .hobo files will also be stored on the Ohmer Lab's harddrive, as well as within the ['HOBO Logger Data'](https://drive.google.com/drive/folders/1oFI-eyaX6w-DHK5Gl44ThiE0Vf8JFNVv?usp=share_link) google drive folder in the 'Ecophyisology' team's google drive.
 
 ___
-## THERMAL IMAGES :camera_flash: - FOR FIELD TEAMS
+## Thermal Images :camera_flash: - For Field Teams
 
 This [sign-out sheet](https://docs.google.com/spreadsheets/d/17hg0DTGzJy9akMPVVxuNyOvGWWmSTO8_/edit?usp=sharing&ouid=106517242061380573521&rtpof=true&sd=true) has information on where thermal camera's associated with
 RIBBiTR are housed and which teams are using them. You can refer to it to organize obtaining a thermal camera for 
@@ -121,7 +121,7 @@ naming convention, for example, *'FLIR_Nov22-Feb23*'.
 
 ***Important:***:bangbang: Please make sure to add the relevant metadata for images to this folder.
 
-## THERMAL IMAGES :camera_flash: - FOR ECOPHYSIOLOGY TEAM
+## Thermal Images :camera_flash: - For Ecophysiology Team
 
 ### Organizing thermal images :file_folder:
 
